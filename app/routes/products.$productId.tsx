@@ -56,15 +56,18 @@ export default function Product() {
 		<ProductContext.Provider value={product}>
 			<RootWrapper>
 				<Phone>
-					<div className="flex flex-col h-full w-full overflow-y-auto scrollbar-hide bg-white text-Eden">
-						<header className="pt-9 pb-3 flex items-center justify-center sticky top-0 z-10 bg-Pelorous ">
+					<div className="flex flex-col h-full w-full overflow-y-auto scrollbar-hide bg-white text-gray-800">
+						<header className="pt-8 pb-4 flex items-center justify-center sticky top-0 z-10 bg-Pelorous shadow-md">
 							<div className="flex items-center space-x-4 px-4 max-w-md w-full">
-								<Link to={`../search/${history}`} className="text-2xl">
+								<Link
+									to={`../search/${history}`}
+									className="text-3xl text-white"
+								>
 									🔙
 								</Link>
 								<Form method="post" id={formId} className="w-full">
 									<SearchInput
-										className="flex-grow text-ellipsis"
+										className="flex-grow text-ellipsis rounded border border-gray-300 p-2"
 										placeholder={history || 'Search'}
 										btnProps="right-8"
 									/>
