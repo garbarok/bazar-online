@@ -14,7 +14,7 @@ export default function ResultList({
 }: ResultProductType) {
 	return (
 		<>
-			<h4 className="font-bold text-center text-black text-sm">
+			<h4 className="font-bold text-center text-black text-l pt-2">
 				Search results for "{searchTerm}": {products.length}
 			</h4>
 			<div className="flex-1">
@@ -34,7 +34,7 @@ export default function ResultList({
 										className="max-w-[5rem]  rounded-full bg-cover"
 										key={product.id}
 									/>
-									<div className="flex flex-col">
+									<div className="flex flex-col w-full">
 										<h4 className="font-bold text-black text-l">
 											{product.title}
 										</h4>
@@ -42,7 +42,7 @@ export default function ResultList({
 											{product.description}
 										</p>
 										<div className="flex place-content-between pt-2 ">
-											<h5 className="text-xl font-bold text-black">
+											<h5 className="text-xl font-bold text-Eden">
 												{product.price}$
 											</h5>
 											<Rating />

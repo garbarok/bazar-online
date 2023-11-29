@@ -1,3 +1,4 @@
+import { cssBundleHref } from '@remix-run/css-bundle'
 import { type LinksFunction } from '@remix-run/node'
 import {
 	Links,
@@ -13,6 +14,7 @@ import { GeneralErrorBoundary } from './components/error-boundary.tsx'
 import fontStylesheetUrl from './styles/font.css'
 import ratingStylesheetUrl from './styles/rating.css'
 import tailwindStylesheetUrl from './styles/tailwind.css'
+import './styles/global.css'
 
 export const links: LinksFunction = () => {
 	return [
@@ -20,6 +22,7 @@ export const links: LinksFunction = () => {
 		{ rel: 'stylesheet', href: fontStylesheetUrl },
 		{ rel: 'stylesheet', href: tailwindStylesheetUrl },
 		{ rel: 'stylesheet', href: ratingStylesheetUrl },
+		cssBundleHref ? { rel: 'stylesheet', href: cssBundleHref } : null,
 	].filter(Boolean)
 }
 

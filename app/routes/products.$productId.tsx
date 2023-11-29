@@ -56,9 +56,9 @@ export default function Product() {
 		<ProductContext.Provider value={product}>
 			<RootWrapper>
 				<Phone>
-					<div className="flex flex-col h-full bg-white w-full overflow-y-auto">
-						<header className="p-4 mt-4 flex items-center justify-center">
-							<div className="flex items-center space-x-4 max-w-md w-full">
+					<div className="flex flex-col h-full w-full overflow-y-auto scrollbar-hide bg-white text-Eden">
+						<header className="pt-9 pb-3 flex items-center justify-center sticky top-0 z-10 bg-Pelorous ">
+							<div className="flex items-center space-x-4 px-4 max-w-md w-full">
 								<Link to={`../search/${history}`} className="text-2xl">
 									🔙
 								</Link>

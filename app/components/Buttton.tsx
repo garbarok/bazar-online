@@ -8,7 +8,7 @@ export default function Buttton({ formId, children, disabled }: ButtonProps) {
 		<button
 			type="submit"
 			form={formId}
-			className={`btn btn-primary w-64 rounded-full mt-4 ${
+			className={`btn w-64 rounded-full mt-10 bg-Elm text-gray-100 border-0 hover:bg-Pelorous ${
 				disabled ? 'opacity-50 cursor-not-allowed' : ''
 			}}`}
 		>

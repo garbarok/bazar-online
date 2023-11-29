@@ -25,7 +25,9 @@ export default function Index() {
 				<div className="flex h-screen w-full justify-center items-center bg-white">
 					<div className="flex flex-col items-center">
 						<Logo />
-						<h1 className="mb-4 text-2xl font-bold">Bazar Online</h1>
+						<h1 className=" pb-4 text-4xl font-bold bg-gradient-to-l from-Pelorous to-Eden bg-clip-text text-transparent">
+							Bazar Online
+						</h1>
 						<Form method="post" className="relative" id="search-form">
 							<SearchInput />
 						</Form>
