@@ -1,22 +1,72 @@
-import { LiveReload, Scripts } from '@remix-run/react'
-import { KCDShop } from './kcdshop.tsx'
+import { type LinksFunction } from '@remix-run/node'
+import {
+	Links,
+	LiveReload,
+	Meta,
+	Outlet,
+	Scripts,
+	ScrollRestoration,
+	type MetaFunction,
+} from '@remix-run/react'
+import faviconAssetUrl from './assets/truck.svg'
+import { GeneralErrorBoundary } from './components/error-boundary.tsx'
+import fontStylesheetUrl from './styles/font.css'
+import ratingStylesheetUrl from './styles/rating.css'
+import tailwindStylesheetUrl from './styles/tailwind.css'
 
-// 🐨 export a links function here that adds the favicon
-// 💰 It should have the following properties:
-// - rel: 'icon'
-// - type: 'image/svg+xml'
-// - href: '/favicon.svg'
+export const links: LinksFunction = () => {
+	return [
+		{ rel: 'icon', type: 'image/svg+xml', href: faviconAssetUrl },
+		{ rel: 'stylesheet', href: fontStylesheetUrl },
+		{ rel: 'stylesheet', href: tailwindStylesheetUrl },
+		{ rel: 'stylesheet', href: ratingStylesheetUrl },
+	].filter(Boolean)
+}
 
-export default function App() {
+function Document({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
-			<head>{/* 🐨 Put Remix's <Links /> in here */}</head>
-			<body>
-				<p>Hello World</p>
+		<html lang="en" className="h-full overflow-x-hidden">
+			<head>
+				<Meta />
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="width=device-width,initial-scale=0.75" />
+				<Links />
+			</head>
+			<body className="flex h-full flex-col justify-between bg-background text-foreground overflow-y-hidden">
+				{children}
+				<ScrollRestoration />
 				<Scripts />
-				<KCDShop />
 				<LiveReload />
 			</body>
 		</html>
+	)
+}
+
+export default function App() {
+	return (
+		<Document>
+			<div className="flex-1">
+				<Outlet />
+			</div>
+		</Document>
+	)
+}
+
+export const meta: MetaFunction = () => {
+	return [
+		{ title: 'Bazar Online' },
+		{ name: 'description', content: `Your own captain's log` },
+		{ name: 'keywords', content: 'remix, react, javascript' },
+		{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+	]
+}
+
+export function ErrorBoundary() {
+	return (
+		<Document>
+			<div className="flex-1">
+				<GeneralErrorBoundary />
+			</div>
+		</Document>
 	)
 }

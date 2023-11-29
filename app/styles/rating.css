@@ -1,0 +1,11 @@
+.mask-half-1 {
+  -webkit-mask-size: 100% !important;
+  mask-size: 100% !important;
+  -webkit-mask-position: left !important;
+  mask-position: left !important;
+}
+
+:is([dir="rtl"] .mask-half-1) {
+  -webkit-mask-position: right !important;
+  mask-position: right !important;
+}
