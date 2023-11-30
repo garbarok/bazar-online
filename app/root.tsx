@@ -15,6 +15,7 @@ import fontStylesheetUrl from './styles/font.css'
 import ratingStylesheetUrl from './styles/rating.css'
 import tailwindStylesheetUrl from './styles/tailwind.css'
 import './styles/global.css'
+import { Analytics } from '@vercel/analytics/react'
 
 export const links: LinksFunction = () => {
 	return [
@@ -36,6 +37,7 @@ function Document({ children }: { children: React.ReactNode }) {
 				<Links />
 			</head>
 			<body className="flex h-full flex-col justify-between bg-background text-foreground overflow-y-hidden">
+				<Analytics />
 				{children}
 				<ScrollRestoration />
 				<Scripts />
