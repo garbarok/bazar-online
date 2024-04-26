@@ -9,13 +9,13 @@ import {
 	ScrollRestoration,
 	type MetaFunction,
 } from '@remix-run/react'
+import { Analytics } from '@vercel/analytics/react'
 import faviconAssetUrl from './assets/truck.svg'
 import { GeneralErrorBoundary } from './components/error-boundary.tsx'
 import fontStylesheetUrl from './styles/font.css'
 import ratingStylesheetUrl from './styles/rating.css'
 import tailwindStylesheetUrl from './styles/tailwind.css'
 import './styles/global.css'
-import { Analytics } from '@vercel/analytics/react'
 
 export const links: LinksFunction = () => {
 	return [
