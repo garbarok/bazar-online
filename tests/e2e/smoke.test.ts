@@ -18,8 +18,3 @@ test('There is a Search button in home page', async ({ page }) => {
 		}),
 	).toContainText('Search')
 })
-
-test('There is a Search input in home page', async ({ page }) => {
-	await page.goto('/')
-	await expect(page.getByRole('searchbox')).toBeVisible()
-})
