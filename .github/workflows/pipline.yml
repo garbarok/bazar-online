@@ -17,10 +17,14 @@ jobs:
           node-version: '20'
       - name: Install dependencies
         run: npm install
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps chromium
       - name: Lint
         run: npm run lint
       - name: Build
         run: npm run build
+      - name: Test
+        run: npx playwright test
       - name: Deploy
         run: |
           echo "Deploying to production..."
