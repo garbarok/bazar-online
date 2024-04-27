@@ -1,3 +1,5 @@
+[![Deployment Pipeline](https://github.com/garbarok/bazar-online/actions/workflows/pipline.yml/badge.svg)](https://github.com/garbarok/bazar-online/actions/workflows/pipline.yml)
+
 # Bazar Online App
 
 ## Introduction
